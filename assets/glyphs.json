@@ -1,0 +1,151 @@
+[
+ {
+  "id": 2,
+  "img": "assets/glyphs/2.png",
+  "background": "Dots",
+  "traits": [
+   "Beanie",
+   "Horned Rim Glasses",
+   "Normal Beard",
+   "Frown"
+  ],
+  "tier": "UNCOMMON"
+ },
+ {
+  "id": 7,
+  "img": "assets/glyphs/7.png",
+  "background": "Dark Grey",
+  "traits": [
+   "Do Rag",
+   "Big Shades",
+   "Shadow Beard",
+   "Bubblegum",
+   "Gold Chain"
+  ],
+  "tier": "RARE"
+ },
+ {
+  "id": 8,
+  "img": "assets/glyphs/8.png",
+  "background": "Dark Grey",
+  "traits": [
+   "Tassle Hat",
+   "Clown Eyes Green",
+   "Mustache",
+   "Buck Teeth"
+  ],
+  "tier": "RARE"
+ },
+ {
+  "id": 13,
+  "img": "assets/glyphs/13.png",
+  "background": "Static",
+  "traits": [
+   "Wild Blonde",
+   "Small Shades",
+   "Frown",
+   "Silver Chain"
+  ],
+  "tier": "UNCOMMON"
+ },
+ {
+  "id": 14,
+  "img": "assets/glyphs/14.png",
+  "background": "Dark Grey",
+  "traits": [
+   "Blonde Short",
+   "Classic Shades",
+   "Blue Eye Shadow",
+   "Pipe"
+  ],
+  "tier": "UNCOMMON"
+ },
+ {
+  "id": 16,
+  "img": "assets/glyphs/16.png",
+  "background": "Dark Grey",
+  "traits": [
+   "Frumpy Hair",
+   "Nerd Glasses",
+   "Blue Eye Shadow",
+   "Shadow Beard",
+   "Mole"
+  ],
+  "tier": "RARE"
+ },
+ {
+  "id": 17,
+  "img": "assets/glyphs/17.png",
+  "background": "Matrix",
+  "traits": [
+   "Straight Hair Blonde",
+   "Regular Shades",
+   "Vape",
+   "Gold Chain"
+  ],
+  "tier": "UNCOMMON"
+ },
+ {
+  "id": 21,
+  "img": "assets/glyphs/21.png",
+  "background": "Static",
+  "traits": [
+   "Wild White Hair",
+   "Horned Rim Glasses",
+   "Clown Eyes Blue",
+   "Buck Teeth",
+   "Earring"
+  ],
+  "tier": "EPIC"
+ },
+ {
+  "id": 22,
+  "img": "assets/glyphs/22.png",
+  "background": "Dark Grey",
+  "traits": [
+   "Fedora",
+   "Shadow Beard",
+   "Clown Nose",
+   "Earring"
+  ],
+  "tier": "UNCOMMON"
+ },
+ {
+  "id": 25,
+  "img": "assets/glyphs/25.png",
+  "background": "Dots",
+  "traits": [
+   "Beanie",
+   "Horned Rim Glasses",
+   "Normal Beard",
+   "Buck Teeth",
+   "Mole"
+  ],
+  "tier": "EPIC"
+ },
+ {
+  "id": 26,
+  "img": "assets/glyphs/26.png",
+  "background": "Dark Grey",
+  "traits": [
+   "Crazy Hair",
+   "VR",
+   "Big Beard",
+   "Vape",
+   "Gold Chain"
+  ],
+  "tier": "RARE"
+ },
+ {
+  "id": 29,
+  "img": "assets/glyphs/29.png",
+  "background": "Static",
+  "traits": [
+   "Straight Hair",
+   "VR",
+   "Handlebars",
+   "Frown"
+  ],
+  "tier": "UNCOMMON"
+ }
+]

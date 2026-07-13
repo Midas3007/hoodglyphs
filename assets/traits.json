@@ -1,0 +1,98 @@
+{
+ "headgear": [
+  "bandana",
+  "beanie",
+  "cap",
+  "cap_forward",
+  "cowboy_hat",
+  "do_rag",
+  "fedora",
+  "headband",
+  "hoodie",
+  "knitted_cap",
+  "pilot_helmet",
+  "police_cap",
+  "tassle_hat",
+  "tiara",
+  "top_hat"
+ ],
+ "hair": [
+  "blonde_bob",
+  "blonde_short",
+  "clown_hair_green",
+  "crazy_hair",
+  "dark_hair",
+  "frumpy_hair",
+  "half_shaved",
+  "messy_hair",
+  "mohawk",
+  "mohawk_dark",
+  "mohawk_thin",
+  "peak_spike",
+  "purple_hair",
+  "red_mohawk",
+  "shaved_head",
+  "straight_hair",
+  "straight_hair_blonde",
+  "straight_hair_dark",
+  "stringy_hair",
+  "vampire_hair",
+  "wild_blonde",
+  "wild_hair",
+  "wild_white_hair"
+ ],
+ "facialhair": [
+  "big_beard",
+  "chinstrap",
+  "front_beard",
+  "front_beard_dark",
+  "goat",
+  "handlebars",
+  "luxurious_beard",
+  "mustache",
+  "muttonchops",
+  "normal_beard",
+  "normal_beard_black",
+  "shadow_beard"
+ ],
+ "noseblemish": [
+  "clown_nose",
+  "mole",
+  "rosy_cheeks",
+  "spots"
+ ],
+ "mouth": [
+  "buck_teeth",
+  "cigarette",
+  "frown",
+  "medical_mask",
+  "pipe",
+  "smile",
+  "vape"
+ ],
+ "eyemakeup": [
+  "blue_eye_shadow",
+  "clown_eyes_blue",
+  "clown_eyes_green",
+  "green_eye_shadow",
+  "purple_eye_shadow"
+ ],
+ "neck": [
+  "earring",
+  "gold_chain",
+  "silver_chain"
+ ],
+ "eyewear": [
+  "3d_glasses",
+  "big_shades",
+  "classic_shades",
+  "eye_mask",
+  "eye_patch",
+  "horned_rim_glasses",
+  "nerd_glasses",
+  "regular_shades",
+  "small_shades",
+  "vr",
+  "welding_goggles"
+ ]
+}

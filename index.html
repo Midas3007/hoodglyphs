@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HoodGlyphs — 5,555 glyphs written in text</title>
+<meta name="description" content="5,555 deadpan heads written in raw text. No pixels, no brushes — just characters, arranged into a stare. Minting on Robinhood Chain.">
+<link rel="icon" href="assets/mascot.png">
+<meta property="og:title" content="HoodGlyphs — 5,555 glyphs written in text">
+<meta property="og:description" content="No pixels. Just characters, arranged into a stare. Same face, every cycle.">
+<meta property="og:image" content="assets/banner.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HoodGlyphs — 5,555 glyphs written in text">
+<meta name="twitter:description" content="No pixels. Just characters, arranged into a stare. Same face, every cycle.">
+<meta name="twitter:image" content="assets/banner.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   HoodGlyphs — one file, one typeface, one accent.
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0a0a0a;
+  --panel:#111111;
+  --panel-2:#161616;
+  --line:#232323;
+  --line-2:#2e2e2e;
+  --ink:#e9e9e6;
+  --mute:#6f6f6b;
+  --mute-2:#8e8e89;
+  --lime:#CCFF00;
+  --lime-dim:#93b800;
+  --err:#ff6b6b;
+  --mono:'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--mono);
+  font-size:15px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--lime);color:#000}
+:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+
+/* ── ticker ─────────────────────────────────────────────── */
+.ticker{
+  background:var(--lime);color:#000;
+  font-weight:700;font-size:12px;letter-spacing:.14em;
+  padding:7px 0;overflow:hidden;white-space:nowrap;
+  position:relative;z-index:60;
+}
+.ticker-track{display:inline-block;animation:slide 38s linear infinite;}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker span{padding:0 6px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── nav ────────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,10,10,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{
+  max-width:var(--max);margin:0 auto;padding:14px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{font-weight:800;font-size:16px;letter-spacing:-.02em;white-space:nowrap}
+.brand .z{color:var(--lime)}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--mute-2)}
+.nav-links a{transition:color .15s}
+.nav-links a:hover{color:var(--lime)}
+.nav-x{border:1px solid var(--line-2);padding:4px 9px;border-radius:3px;font-size:12px}
+.nav-x:hover{border-color:var(--lime);color:var(--lime)}
+.nav-cta{
+  background:var(--lime);color:#000;font-weight:700;font-size:12.5px;
+  padding:8px 15px;border-radius:3px;letter-spacing:.04em;white-space:nowrap;
+  transition:box-shadow .18s,transform .12s;
+}
+.nav-cta:hover{box-shadow:0 0 0 3px rgba(204,255,0,.16);transform:translateY(-1px)}
+.burger{display:none;background:none;border:1px solid var(--line-2);color:var(--ink);
+  border-radius:3px;padding:5px 9px;font-family:var(--mono);cursor:pointer}
+
+/* ── layout ─────────────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+section{padding:86px 0;border-bottom:1px solid var(--line)}
+.rule{color:var(--line-2);font-size:12px;line-height:1;overflow:hidden;white-space:nowrap;user-select:none}
+
+/* section heading = a shell command. the structure IS the subject. */
+.head{margin-bottom:14px}
+.head .cmd{font-size:clamp(19px,3.2vw,26px);font-weight:800;letter-spacing:-.01em}
+.head .cmd .p{color:var(--lime);margin-right:10px}
+.head .cmd .flag{color:var(--mute);font-weight:400;font-size:.62em;margin-left:10px}
+.head p{color:var(--mute-2);margin-top:10px;max-width:62ch;font-size:14px}
+
+/* ── hero ───────────────────────────────────────────────── */
+.hero{position:relative;padding:76px 0 90px;border-bottom:1px solid var(--line);overflow:hidden}
+#rain{position:absolute;inset:0;width:100%;height:100%;opacity:.16;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.badge{
+  display:inline-block;border:1px solid var(--lime-dim);color:var(--lime);
+  font-size:11px;letter-spacing:.16em;padding:5px 11px;border-radius:3px;
+  margin-bottom:26px;
+}
+h1{
+  font-size:clamp(38px,7.4vw,74px);font-weight:800;line-height:1;
+  letter-spacing:-.045em;margin-bottom:16px;
+}
+h1 .z{color:var(--lime)}
+.tagline{
+  font-size:clamp(24px,4vw,34px);font-weight:300;color:var(--mute-2);
+  letter-spacing:-.02em;margin-bottom:22px;
+}
+.tagline .cursor{
+  display:inline-block;width:.55em;height:1em;background:var(--lime);
+  margin-left:5px;vertical-align:-.12em;animation:blink 1.05s steps(2,start) infinite;
+}
+@keyframes blink{to{visibility:hidden}}
+.lede{color:var(--mute-2);max-width:50ch;margin-bottom:30px;font-size:14.5px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.btn{
+  font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;
+  padding:13px 22px;border-radius:3px;border:1px solid var(--line-2);
+  color:var(--ink);background:transparent;cursor:pointer;transition:all .16s;
+}
+.btn:hover{border-color:var(--lime);color:var(--lime)}
+.btn-lime{background:var(--lime);border-color:var(--lime);color:#000}
+.btn-lime:hover{background:#d9ff33;border-color:#d9ff33;color:#000;box-shadow:0 0 0 4px rgba(204,255,0,.14)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{
+  border:1px solid var(--line);color:var(--mute);font-size:11px;
+  letter-spacing:.1em;padding:5px 10px;border-radius:3px;background:var(--panel);
+}
+.hero-art{border:1px solid var(--line-2);border-radius:5px;padding:11px;background:var(--panel);
+  box-shadow:0 0 60px rgba(204,255,0,.055)}
+.hero-art img{width:100%;border-radius:3px}
+.hero-cap{
+  text-align:center;color:var(--mute);font-size:12px;margin-top:11px;
+  letter-spacing:.08em;
+}
+
+/* ── feature cards ──────────────────────────────────────── */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.card{border:1px solid var(--line);background:var(--panel);border-radius:5px;padding:22px;transition:border-color .18s}
+.card:hover{border-color:var(--line-2)}
+.tok{
+  display:inline-block;border:1px solid var(--lime-dim);color:var(--lime);
+  font-size:11px;font-weight:700;padding:2px 8px;border-radius:3px;margin-bottom:14px;
+}
+.card h3{font-size:13px;font-weight:700;letter-spacing:.08em;margin-bottom:9px}
+.card p{color:var(--mute-2);font-size:13px;line-height:1.62}
+
+/* ── collection ─────────────────────────────────────────── */
+.glyphs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.g{border:1px solid var(--line);background:var(--panel);border-radius:5px;overflow:hidden;
+   transition:border-color .18s,transform .18s}
+.g:hover{border-color:var(--lime);transform:translateY(-3px)}
+.g-top{display:flex;justify-content:space-between;align-items:center;padding:11px 13px;border-bottom:1px solid var(--line)}
+.g-id{font-size:11.5px;color:var(--mute);letter-spacing:.06em}
+.g img{width:100%;aspect-ratio:1;object-fit:cover;background:#0d0d0d}
+.g-tr{padding:11px 13px;border-top:1px solid var(--line);color:var(--mute);font-size:11px;line-height:1.6}
+.tier{font-size:10px;font-weight:700;letter-spacing:.1em;padding:3px 8px;border-radius:3px;border:1px solid}
+.t-LEGENDARY{background:var(--lime);color:#000;border-color:var(--lime)}
+.t-EPIC{color:#a78bfa;border-color:#5b4a94}
+.t-RARE{color:#60a5fa;border-color:#39557f}
+.t-UNCOMMON{color:#4ade80;border-color:#2f6a48}
+.t-COMMON{color:var(--mute);border-color:var(--line-2)}
+
+/* ── traits ─────────────────────────────────────────────── */
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin:30px 0 22px}
+.f{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  padding:7px 12px;border:1px solid var(--line);background:var(--panel);
+  color:var(--mute-2);border-radius:3px;cursor:pointer;transition:all .14s;
+}
+.f:hover{border-color:var(--line-2);color:var(--ink)}
+.f.on{background:var(--lime);border-color:var(--lime);color:#000;font-weight:700}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px}
+.t{border:1px solid var(--line);background:var(--panel);border-radius:4px;overflow:hidden;transition:border-color .15s}
+.t:hover{border-color:var(--lime-dim)}
+.t img{width:100%;aspect-ratio:1;object-fit:cover;background:#0d0d0d}
+.t span{display:block;padding:6px 7px;font-size:10px;color:var(--mute);text-align:center;
+  border-top:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ── mint ───────────────────────────────────────────────── */
+.mint-panel{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:30px;margin-top:34px;max-width:660px}
+.spec{border-top:1px solid var(--line)}
+.spec div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.spec dt{color:var(--mute);font-size:12px;letter-spacing:.1em}
+.spec dd{font-weight:700;font-size:13.5px}
+.spec dd.tbd{color:var(--mute);font-weight:400}
+.mint-btn{width:100%;margin-top:24px;padding:16px;font-size:13px;font-weight:700;letter-spacing:.06em;
+  border-radius:4px;font-family:var(--mono);text-align:center;display:block}
+.mint-off{background:var(--panel-2);border:1px solid var(--line-2);color:var(--mute);cursor:not-allowed}
+.mint-note{color:var(--mute);font-size:12px;margin-top:12px;text-align:center}
+
+/* ── waitlist ───────────────────────────────────────────── */
+.notice{
+  border:1px solid var(--lime-dim);background:rgba(204,255,0,.045);
+  border-radius:5px;padding:18px 20px;margin:30px 0 34px;font-size:13.5px;color:var(--mute-2);
+  max-width:820px;
+}
+.notice b{color:var(--lime)}
+.wl{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.panel{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:24px}
+.panel-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.panel-h span{font-size:11px;letter-spacing:.12em;color:var(--mute)}
+.pct{color:var(--lime);font-weight:700;font-size:12px}
+.bar{height:3px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:18px}
+.bar i{display:block;height:100%;width:0;background:var(--lime);transition:width .3s}
+.q{display:flex;align-items:center;gap:11px;padding:12px 13px;border:1px solid var(--line);
+   background:var(--panel-2);border-radius:4px;margin-bottom:8px;transition:border-color .15s}
+.q.done{border-color:var(--lime-dim)}
+.q label{flex:1;font-size:12.5px;cursor:pointer;color:var(--mute-2)}
+.q.done label{color:var(--ink)}
+.q input[type=checkbox]{width:15px;height:15px;accent-color:var(--lime);cursor:pointer;flex:none}
+.q a{font-size:10.5px;letter-spacing:.06em;border:1px solid var(--lime-dim);color:var(--lime);
+  padding:3px 8px;border-radius:3px;flex:none;transition:all .14s}
+.q a:hover{background:var(--lime);color:#000}
+.q a.used{opacity:.42}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.shake{animation:shake .28s}
+.fld{margin-bottom:15px}
+.fld label{display:block;font-size:10.5px;letter-spacing:.12em;color:var(--mute);margin-bottom:6px}
+.fld input{
+  width:100%;background:#0c0c0c;border:1px solid var(--line-2);color:var(--ink);
+  font-family:var(--mono);font-size:13px;padding:11px 12px;border-radius:4px;transition:border-color .15s;
+}
+.fld input::placeholder{color:#4a4a47}
+.fld input:focus{outline:none;border-color:var(--lime)}
+.fld .hint{font-size:11px;color:var(--mute);margin-top:5px}
+.fld .err{font-size:11.5px;color:var(--err);margin-top:5px;display:none}
+.fld.bad input{border-color:var(--err)}
+.fld.bad .err{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.sub-note{color:var(--mute);font-size:11.5px;margin-top:11px;text-align:center}
+.ok{text-align:center;padding:26px 12px}
+.ok pre{
+  color:var(--lime);font-size:12.5px;line-height:1.85;text-align:left;
+  display:inline-block;margin-bottom:18px;
+}
+.ok .big{font-size:20px;font-weight:800;margin-bottom:8px}
+.ok .sm{color:var(--mute);font-size:12.5px}
+
+/* ── footer ─────────────────────────────────────────────── */
+footer{padding:60px 0 46px;text-align:center}
+footer img{width:120px;margin:0 auto 22px;border:1px solid var(--line);border-radius:5px;opacity:.9}
+.f-line{color:var(--mute-2);font-size:13px;margin-bottom:14px}
+.f-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;font-size:12.5px}
+.f-links a{color:var(--mute-2);transition:color .15s}
+.f-links a:hover{color:var(--lime)}
+.f-links span{color:#3a3a38;cursor:not-allowed}
+.f-fine{color:#4d4d4a;font-size:11.5px}
+
+/* ── reveal ─────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ── responsive ─────────────────────────────────────────── */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .glyphs{grid-template-columns:repeat(2,1fr)}
+  .wl{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-links.open{
+    display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    align-items:flex-start;gap:0;background:#0d0d0d;border-bottom:1px solid var(--line);padding:8px 22px 14px;
+  }
+  .nav-links.open a{padding:11px 0;width:100%;border-bottom:1px solid var(--line)}
+  .burger{display:block}
+}
+@media(max-width:640px){
+  section{padding:60px 0}
+  .hero{padding:52px 0 64px}
+  .cards{grid-template-columns:1fr}
+  .glyphs{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
+  .mint-panel{padding:22px}
+  .panel{padding:18px}
+  .nav-cta{padding:7px 11px;font-size:11.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ ticker ═══ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tick"></div>
+</div>
+
+<!-- ═══ nav ═══ -->
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand">H<span class="z">00</span>dGlyph<span class="z">5</span></a>
+    <div class="nav-links" id="links">
+      <a href="#collection">collection</a>
+      <a href="#traits">traits</a>
+      <a href="#mint">mint</a>
+      <a href="#waitlist">free mint</a>
+      <a class="nav-x" href="https://x.com/H00dGlyph5" target="_blank" rel="noopener">[ x ]</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="#waitlist" class="nav-cta">FREE MINT →</a>
+      <button class="burger" id="burger" aria-label="menu">≡</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ hero ═══ -->
+<header class="hero" id="top">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="badge">=== NOW WRITING TO ROBINHOOD CHAIN ===</div>
+        <h1>H<span class="z">00</span>dGlyph<span class="z">5</span></h1>
+        <div class="tagline">unmoved.<i class="cursor"></i></div>
+        <p class="lede">
+          5,555 deadpan heads written in raw text. No pixels, no brushes — just characters,
+          arranged into a face that stares straight through you. Same face, every cycle.
+        </p>
+        <div class="btns">
+          <a href="#waitlist" class="btn btn-lime">[ CLAIM A FREE GLYPH ]</a>
+          <a href="#collection" class="btn">[ SEE THE COLLECTION ]</a>
+        </div>
+        <div class="chips">
+          <span class="chip">SUPPLY 5555</span>
+          <span class="chip">80 TRAITS</span>
+          <span class="chip">PURE TEXT</span>
+          <span class="chip">ROBINHOOD CHAIN</span>
+        </div>
+      </div>
+      <div>
+        <div class="hero-art">
+          <img src="assets/hero.gif" alt="An animated HoodGlyph: a deadpan head made of text characters, blinking and smoking" width="940" height="940">
+        </div>
+        <div class="hero-cap">every glyph is a grid of characters</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ why ═══ -->
+<section class="rv">
+  <div class="wrap">
+    <div class="head">
+      <div class="cmd"><span class="p">&gt;</span>./what-this-is<span class="flag">--read</span></div>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="tok">.txt</span>
+        <h3>PURE TEXT</h3>
+        <p>Every glyph is a grid of characters. Not a drawing of text — the text is the art. Paste one into a terminal and it still works.</p>
+      </div>
+      <div class="card">
+        <span class="tok">80</span>
+        <h3>EIGHTY TRAITS</h3>
+        <p>Hair, headgear, eyewear, facial hair, mouths, blemishes, chains. Layered onto one base face that never changes expression.</p>
+      </div>
+      <div class="card">
+        <span class="tok">=</span>
+        <h3>SAME FACE, EVERY CYCLE</h3>
+        <p>Pump, dump, rug, gm. The stare does not move. That is the whole joke and the whole point.</p>
+      </div>
+      <div class="card">
+        <span class="tok">RH</span>
+        <h3>ROBINHOOD CHAIN</h3>
+        <p>Minting where the hood came from. 500 free glyphs for people who show up. Public mint for everyone else.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ collection ═══ -->
+<section id="collection" class="rv">
+  <div class="wrap">
+    <div class="head">
+      <div class="cmd"><span class="p">&gt;</span>./collection<span class="flag">--sample 12</span></div>
+      <p>Every glyph is assembled from pure text traits, rolled at mint. Twelve below. The other 5,543 stay unbothered.</p>
+    </div>
+    <div class="glyphs" id="glyphs"></div>
+  </div>
+</section>
+
+<!-- ═══ traits ═══ -->
+<section id="traits" class="rv">
+  <div class="wrap">
+    <div class="head">
+      <div class="cmd"><span class="p">&gt;</span>./traits<span class="flag">--count 80</span></div>
+      <p>Eighty traits across eight layers. Filter them below.</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="tgrid" id="tgrid"></div>
+  </div>
+</section>
+
+<!-- ═══ mint ═══ -->
+<section id="mint" class="rv">
+  <div class="wrap">
+    <div class="head">
+      <div class="cmd"><span class="p">&gt;</span>./mint<span class="flag">--status</span></div>
+      <p>Public mint, open to everyone. No allowlist theatre.</p>
+    </div>
+    <div class="mint-panel">
+      <dl class="spec" id="spec"></dl>
+      <a id="mintBtn" class="mint-btn mint-off">[ MINT NOT OPEN YET ]</a>
+      <p class="mint-note">mint goes live on opensea. this site never asks for your wallet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ waitlist ═══ -->
+<section id="waitlist" class="rv">
+  <div class="wrap">
+    <div class="head">
+      <div class="cmd"><span class="p">&gt;</span>./free-mint<span class="flag">--500 spots</span></div>
+      <p>Do the quests, drop your proof, and you're in for one of 500 free glyphs.</p>
+    </div>
+
+    <div class="notice">
+      <b>THIS IS NOT A WHITELIST.</b> The mint is public and open to everyone. This form is only for
+      the 500 free glyphs, drawn from people who actually showed up. Applying doesn't change your
+      public mint. It doesn't cost anything and it never touches your wallet.
+    </div>
+
+    <div class="wl">
+      <!-- quests -->
+      <div class="panel">
+        <div class="panel-h">
+          <span>QUESTS · 4</span>
+          <span class="pct" id="pct">0% ready</span>
+        </div>
+        <div class="bar"><i id="barFill"></i></div>
+        <div id="quests"></div>
+      </div>
+
+      <!-- form -->
+      <div class="panel" id="formPanel">
+        <div class="panel-h"><span>YOUR DETAILS</span></div>
+        <div class="bar" style="margin-bottom:20px"><i style="width:100%;background:var(--line-2)"></i></div>
+
+        <form id="form" novalidate>
+          <input class="hp" type="text" name="website" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="fld" id="f-handle">
+            <label for="handle">X / TWITTER HANDLE</label>
+            <input id="handle" type="text" placeholder="@yourhandle" autocomplete="off" spellcheck="false">
+            <div class="err">that handle doesn't look right.</div>
+          </div>
+
+          <div class="fld" id="f-link">
+            <label for="link">LINK TO YOUR COMMENT</label>
+            <input id="link" type="url" placeholder="https://x.com/.../status/..." autocomplete="off" spellcheck="false">
+            <div class="hint">comment under any HoodGlyphs post, then paste the link to your comment.</div>
+            <div class="err">paste a link to your comment on x.</div>
+          </div>
+
+          <div class="fld" id="f-wallet">
+            <label for="wallet">WALLET ADDRESS</label>
+            <input id="wallet" type="text" placeholder="0x…" autocomplete="off" spellcheck="false">
+            <div class="hint">EVM address. this is where the free glyph goes.</div>
+            <div class="err">that's not a valid address.</div>
+          </div>
+
+          <button type="submit" class="btn btn-lime" id="submit" style="width:100%;padding:15px">[ SUBMIT ENTRY ]</button>
+          <p class="sub-note" id="subNote">one entry per person. the mint stays public regardless.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ footer ═══ -->
+<footer>
+  <div class="wrap">
+    <img src="assets/mascot.png" alt="HoodGlyphs mascot" width="120" height="120">
+    <div class="f-line">HoodGlyphs · 5,555 glyphs written in text · Robinhood Chain</div>
+    <div class="f-links">
+      <a href="https://x.com/H00dGlyph5" target="_blank" rel="noopener">[ x / twitter ]</a>
+      <span id="osFoot">[ opensea ]</span>
+      <a href="assets/hoodglyph.txt" target="_blank">[ .txt ]</a>
+    </div>
+    <div class="f-fine">not financial advice. it's a face made of characters. unmoved.</div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════
+   EDIT THESE. Everything you'll need to change lives right here.
+   ═══════════════════════════════════════════════════════════════ */
+
+const MINT = {
+  price:      "TBD",              // e.g. "0.0001 ETH"
+  supply:     "5,555",
+  date:       "TBD",              // e.g. "AUG 2 · 18:00 UTC"
+  maxPer:     "5 per wallet",
+  chain:      "Robinhood Chain",
+  openseaUrl: ""                  // paste the OpenSea mint URL here → button turns on automatically
+};
+
+// Google Sheet endpoint (see SETUP.md). Leave "" to test the form without sending anything.
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxgwx8PXagE5cfnCNa7uR4rS7DmHU624KLAEd2bzXosM-Bh0EEkgkXfCrrTWrr4yjBl/exec";
+
+const X_URL = "https://x.com/H00dGlyph5";
+
+/* ═══════════════════════════════════════════════════════════════
+   Below here you shouldn't need to touch anything.
+   ═══════════════════════════════════════════════════════════════ */
+
+const GLYPHS = [
+{"id":2,"img":"assets/glyphs/2.png","traits":["Beanie","Horned Rim Glasses","Normal Beard","Frown"],"tier":"UNCOMMON"},
+{"id":7,"img":"assets/glyphs/7.png","traits":["Do Rag","Big Shades","Shadow Beard","Bubblegum","Gold Chain"],"tier":"RARE"},
+{"id":8,"img":"assets/glyphs/8.png","traits":["Tassle Hat","Clown Eyes Green","Mustache","Buck Teeth"],"tier":"RARE"},
+{"id":13,"img":"assets/glyphs/13.png","traits":["Wild Blonde","Small Shades","Frown","Silver Chain"],"tier":"UNCOMMON"},
+{"id":14,"img":"assets/glyphs/14.png","traits":["Blonde Short","Classic Shades","Blue Eye Shadow","Pipe"],"tier":"UNCOMMON"},
+{"id":16,"img":"assets/glyphs/16.png","traits":["Frumpy Hair","Nerd Glasses","Blue Eye Shadow","Shadow Beard","Mole"],"tier":"RARE"},
+{"id":17,"img":"assets/glyphs/17.png","traits":["Straight Hair Blonde","Regular Shades","Vape","Gold Chain"],"tier":"UNCOMMON"},
+{"id":21,"img":"assets/glyphs/21.png","traits":["Wild White Hair","Horned Rim Glasses","Clown Eyes Blue","Buck Teeth","Earring"],"tier":"EPIC"},
+{"id":22,"img":"assets/glyphs/22.png","traits":["Fedora","Shadow Beard","Clown Nose","Earring"],"tier":"UNCOMMON"},
+{"id":25,"img":"assets/glyphs/25.png","traits":["Beanie","Horned Rim Glasses","Normal Beard","Buck Teeth","Mole"],"tier":"EPIC"},
+{"id":26,"img":"assets/glyphs/26.png","traits":["Crazy Hair","VR","Big Beard","Vape","Gold Chain"],"tier":"RARE"},
+{"id":29,"img":"assets/glyphs/29.png","traits":["Straight Hair","VR","Handlebars","Frown"],"tier":"UNCOMMON"}
+];
+
+const TRAITS = {
+"hair":["blonde_bob","blonde_short","clown_hair_green","crazy_hair","dark_hair","frumpy_hair","half_shaved","messy_hair","mohawk","mohawk_dark","mohawk_thin","peak_spike","purple_hair","red_mohawk","shaved_head","straight_hair","straight_hair_blonde","straight_hair_dark","stringy_hair","vampire_hair","wild_blonde","wild_hair","wild_white_hair"],
+"headgear":["bandana","beanie","cap","cap_forward","cowboy_hat","do_rag","fedora","headband","hoodie","knitted_cap","pilot_helmet","police_cap","tassle_hat","tiara","top_hat"],
+"eyewear":["3d_glasses","big_shades","classic_shades","eye_mask","eye_patch","horned_rim_glasses","nerd_glasses","regular_shades","small_shades","vr","welding_goggles"],
+"eyemakeup":["blue_eye_shadow","clown_eyes_blue","clown_eyes_green","green_eye_shadow","purple_eye_shadow"],
+"facialhair":["big_beard","chinstrap","front_beard","front_beard_dark","goat","handlebars","luxurious_beard","mustache","muttonchops","normal_beard","normal_beard_black","shadow_beard"],
+"mouth":["buck_teeth","cigarette","frown","medical_mask","pipe","smile","vape"],
+"noseblemish":["clown_nose","mole","rosy_cheeks","spots"],
+"neck":["earring","gold_chain","silver_chain"]
+};
+const LAYER_LABEL = {hair:"hair",headgear:"headgear",eyewear:"eyewear",eyemakeup:"eye makeup",
+  facialhair:"facial hair",mouth:"mouth",noseblemish:"nose / blemish",neck:"neck"};
+
+const QUESTS = [
+  {t:"Follow @H00dGlyph5 on X",         u:X_URL},
+  {t:"Like the pinned post",            u:X_URL},
+  {t:"Repost the pinned post",          u:X_URL},
+  {t:"Comment under the pinned post",   u:X_URL}
+];
+
+const pretty = s => s.replace(/_/g," ").replace(/\b\w/g,c=>c.toUpperCase())
+                     .replace("3d","3D").replace(/\bVr\b/,"VR");
+
+/* ── ticker ────────────────────────────────────────────── */
+(function(){
+  const items = ["5,555 GLYPHS","THE ART IS THE TEXT","UNMOVED","NO PIXELS",
+                 "MINTING ON ROBINHOOD CHAIN","500 FREE","SAME FACE EVERY CYCLE"];
+  const one = items.map(i=>`<span>${i}</span><span>···</span>`).join("");
+  document.getElementById("tick").innerHTML = one + one;
+})();
+
+/* ── ambient character rain (hero only) ────────────────── */
+(function(){
+  const cv = document.getElementById("rain");
+  if (!cv || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const ctx = cv.getContext("2d");
+  let w,h,cols,drops,S=16;
+  function size(){
+    const r = cv.getBoundingClientRect();
+    w = cv.width  = r.width  * devicePixelRatio;
+    h = cv.height = r.height * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+    cols = Math.floor(r.width / S);
+    drops = Array.from({length:cols}, () => Math.random() * (r.height/S));
+  }
+  size();
+  addEventListener("resize", () => { ctx.setTransform(1,0,0,1,0,0); size(); });
+  function frame(){
+    const r = cv.getBoundingClientRect();
+    ctx.clearRect(0,0,r.width,r.height);
+    ctx.font = "12px 'JetBrains Mono', monospace";
+    ctx.fillStyle = "#CCFF00";
+    for (let i=0;i<cols;i++){
+      ctx.fillText(Math.random()<.5?"0":"1", i*S, drops[i]*S);
+      drops[i] += 0.055 + Math.random()*0.06;
+      if (drops[i]*S > r.height && Math.random() > 0.985) drops[i] = 0;
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+/* ── collection ────────────────────────────────────────── */
+document.getElementById("glyphs").innerHTML = GLYPHS.map(g => `
+  <article class="g">
+    <div class="g-top">
+      <span class="g-id">GLYPH #${String(g.id).padStart(4,"0")}</span>
+      <span class="tier t-${g.tier}">${g.tier}</span>
+    </div>
+    <img src="${g.img}" alt="HoodGlyph #${g.id}" loading="lazy" width="420" height="420">
+    <div class="g-tr">${g.traits.join(" · ")}</div>
+  </article>`).join("");
+
+/* ── traits ────────────────────────────────────────────── */
+(function(){
+  const fEl = document.getElementById("filters");
+  const gEl = document.getElementById("tgrid");
+  const layers = Object.keys(TRAITS);
+  const all = [];
+  layers.forEach(l => TRAITS[l].forEach(n => all.push({l,n})));
+
+  fEl.innerHTML = `<button class="f on" data-l="all">all · 80</button>` +
+    layers.map(l => `<button class="f" data-l="${l}">${LAYER_LABEL[l]} · ${TRAITS[l].length}</button>`).join("");
+
+  function draw(filter){
+    const list = filter === "all" ? all : all.filter(t => t.l === filter);
+    gEl.innerHTML = list.map(t => `
+      <div class="t">
+        <img src="assets/traits/${t.l}__${t.n}.png" alt="${pretty(t.n)}" loading="lazy" width="240" height="240">
+        <span>${pretty(t.n)}</span>
+      </div>`).join("");
+  }
+  draw("all");
+
+  fEl.addEventListener("click", e => {
+    const b = e.target.closest(".f");
+    if (!b) return;
+    fEl.querySelectorAll(".f").forEach(x => x.classList.remove("on"));
+    b.classList.add("on");
+    draw(b.dataset.l);
+  });
+})();
+
+/* ── mint ──────────────────────────────────────────────── */
+(function(){
+  const rows = [
+    ["PRICE",          MINT.price],
+    ["SUPPLY",         MINT.supply],
+    ["MAX PER WALLET", MINT.maxPer],
+    ["FREE SPOTS",     "500 · first come first served"],
+    ["CHAIN",          MINT.chain],
+    ["DATE",           MINT.date]
+  ];
+  document.getElementById("spec").innerHTML = rows.map(([k,v]) =>
+    `<div><dt>${k}</dt><dd class="${v==="TBD"?"tbd":""}">${v}</dd></div>`).join("");
+
+  const btn = document.getElementById("mintBtn");
+  if (MINT.openseaUrl){
+    btn.className = "mint-btn btn-lime";
+    btn.textContent = "[ MINT ON OPENSEA → ]";
+    btn.href = MINT.openseaUrl;
+    btn.target = "_blank"; btn.rel = "noopener";
+    const f = document.getElementById("osFoot");
+    f.outerHTML = `<a href="${MINT.openseaUrl}" target="_blank" rel="noopener">[ opensea ]</a>`;
+  }
+})();
+
+/* ── quests ────────────────────────────────────────────── */
+const opened = new Set();
+(function(){
+  const q = document.getElementById("quests");
+  q.innerHTML = QUESTS.map((x,i) => `
+    <div class="q" id="q${i}">
+      <input type="checkbox" id="c${i}" data-i="${i}">
+      <label for="c${i}">${x.t}</label>
+      <a href="${x.u}" target="_blank" rel="noopener" data-i="${i}">open ↗</a>
+    </div>`).join("");
+
+  q.addEventListener("click", e => {
+    const a = e.target.closest("a[data-i]");
+    if (a){ opened.add(+a.dataset.i); a.classList.add("used"); }
+  });
+
+  q.addEventListener("change", e => {
+    const c = e.target.closest("input[type=checkbox]");
+    if (!c) return;
+    const i = +c.dataset.i;
+    if (c.checked && !opened.has(i)){
+      c.checked = false;
+      const row = document.getElementById("q"+i);
+      row.classList.add("shake");
+      setTimeout(() => row.classList.remove("shake"), 300);
+      return;
+    }
+    document.getElementById("q"+i).classList.toggle("done", c.checked);
+    progress();
+  });
+})();
+
+function questsDone(){
+  return [...document.querySelectorAll("#quests input[type=checkbox]")].filter(c => c.checked).length;
+}
+function progress(){
+  const n = questsDone(), pc = Math.round(n / QUESTS.length * 100);
+  document.getElementById("pct").textContent = pc + "% ready";
+  document.getElementById("barFill").style.width = pc + "%";
+}
+
+/* ── form ──────────────────────────────────────────────── */
+const LOADED = Date.now();
+const form   = document.getElementById("form");
+const KEY    = "hoodglyphs_entries";
+
+function bad(id, on){ document.getElementById(id).classList.toggle("bad", on); }
+
+function success(msg){
+  document.getElementById("formPanel").innerHTML = `
+    <div class="ok">
+      <pre>&gt; ./entry --submit
+[OK] entry recorded.
+[OK] wallet queued.</pre>
+      <div class="big">you're in the pool.</div>
+      <div class="sm">${msg}</div>
+    </div>`;
+}
+
+form.addEventListener("submit", async e => {
+  e.preventDefault();
+
+  // bot traps: honeypot + speed
+  if (document.getElementById("hp").value || Date.now() - LOADED < 3000){
+    success("we'll check your comment before mint. unmoved.");
+    return;
+  }
+
+  let handle = document.getElementById("handle").value.trim().replace(/^@/, "");
+  const link = document.getElementById("link").value.trim();
+  const wallet = document.getElementById("wallet").value.trim();
+
+  const okH = /^[A-Za-z0-9_]{1,15}$/.test(handle);
+  const okL = /(x\.com|twitter\.com)\/.+\/status\/\d+/i.test(link);
+  const okW = /^0x[a-fA-F0-9]{40}$/.test(wallet);
+
+  bad("f-handle", !okH); bad("f-link", !okL); bad("f-wallet", !okW);
+
+  const note = document.getElementById("subNote");
+  if (questsDone() < QUESTS.length){
+    note.textContent = "finish the quests first.";
+    note.style.color = "var(--err)";
+    return;
+  }
+  if (!okH || !okL || !okW){
+    note.textContent = "fix the fields above.";
+    note.style.color = "var(--err)";
+    return;
+  }
+  note.style.color = "";
+
+  // already entered?
+  const seen = JSON.parse(localStorage.getItem(KEY) || "[]");
+  if (seen.includes(wallet.toLowerCase())){
+    success("you're already in the pool. unmoved.");
+    return;
+  }
+
+  const btn = document.getElementById("submit");
+  btn.disabled = true;
+  btn.textContent = "[ SENDING… ]";
+
+  const payload = {
+    handle, commentLink: link, wallet,
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent
+  };
+
+  try {
+    if (SHEET_ENDPOINT){
+      await fetch(SHEET_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams(payload)   // form-encoded → no CORS preflight
+      });
+    } else {
+      console.log("[HoodGlyphs] SHEET_ENDPOINT not set. Payload:", payload);
+    }
+    seen.push(wallet.toLowerCase());
+    localStorage.setItem(KEY, JSON.stringify(seen));
+    success("we'll check your comment. glyphs go out after mint. unmoved.");
+  } catch (err){
+    btn.disabled = false;
+    btn.textContent = "[ SUBMIT ENTRY ]";
+    note.textContent = "that didn't send. try again.";
+    note.style.color = "var(--err)";
+  }
+});
+
+/* ── nav + reveal ──────────────────────────────────────── */
+document.getElementById("burger").addEventListener("click", () =>
+  document.getElementById("links").classList.toggle("open"));
+document.getElementById("links").addEventListener("click", e => {
+  if (e.target.tagName === "A") document.getElementById("links").classList.remove("open");
+});
+
+const io = new IntersectionObserver(es => es.forEach(x => {
+  if (x.isIntersecting){ x.target.classList.add("in"); io.unobserve(x.target); }
+}), {threshold:.06});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
