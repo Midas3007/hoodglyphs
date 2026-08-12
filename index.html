@@ -337,7 +337,7 @@ footer img{width:120px;margin:0 auto 22px;border:1px solid var(--line);border-ra
           arranged into a face that stares straight through you. Same face, every cycle.
         </p>
         <div class="btns">
-          <a href="#waitlist" class="btn btn-lime">[ CLAIM A FREE GLYPH ]</a>
+          <a href="#waitlist" class="btn btn-lime">[ APPLY FOR WHITELIST ]</a>
           <a href="#collection" class="btn">[ SEE THE COLLECTION ]</a>
         </div>
         <div class="chips">
@@ -377,12 +377,12 @@ footer img{width:120px;margin:0 auto 22px;border:1px solid var(--line);border-ra
       <div class="card">
         <span class="tok">=</span>
         <h3>SAME FACE, EVERY CYCLE</h3>
-        <p>Pump, dump, rug, gm. We does not move. That is the whole the whole point.</p>
+        <p>Pump, dump, rug, gm. We do not move. That is the whole the whole point.</p>
       </div>
       <div class="card">
         <span class="tok">RH</span>
         <h3>ROBINHOOD CHAIN</h3>
-        <p>Minting where the hood came from. 500 free glyphs for people who show up. Public mint for everyone else.</p>
+        <p>Minting in the hood. 500 gtd glyphs for people who show up. Public mint for everyone else.</p>
       </div>
     </div>
   </div>
@@ -416,7 +416,7 @@ footer img{width:120px;margin:0 auto 22px;border:1px solid var(--line);border-ra
   <div class="wrap">
     <div class="head">
       <div class="cmd"><span class="p">&gt;</span>./mint<span class="flag">--status</span></div>
-      <p>Public mint, open to everyone. No allowlist theatre.</p>
+      <p>Public mint, open to everyone.</p>
     </div>
     <div class="mint-panel">
       <dl class="spec" id="spec"></dl>
@@ -430,14 +430,12 @@ footer img{width:120px;margin:0 auto 22px;border:1px solid var(--line);border-ra
 <section id="waitlist" class="rv">
   <div class="wrap">
     <div class="head">
-      <div class="cmd"><span class="p">&gt;</span>./free-mint<span class="flag">--500 spots</span></div>
-      <p>Do the quests, drop your proof, and you're in for one of 500 free glyphs.</p>
+      <div class="cmd"><span class="p">&gt;</span>./GTD-APPLY<span class="flag">--500 spots</span></div>
+      <p>Do the quests, drop your proof, and you're in for one of 500 GTD spots</p>
     </div>
 
     <div class="notice">
-      <b>THIS IS NOT A WHITELIST.</b> The mint is public and open to everyone. This form is only for
-      the 500 free glyphs, drawn from people who actually showed up. Applying doesn't change your
-      public mint. It doesn't cost anything and it never touches your wallet.
+      <b>APPLICATION IS NOT A GUARANTEE.</b> The Application is open to everyone, but only 500 gtd will be drawn from people who actually showed up. Everyone else gets fcfs.
     </div>
 
     <div class="wl">
@@ -475,7 +473,7 @@ footer img{width:120px;margin:0 auto 22px;border:1px solid var(--line);border-ra
           <div class="fld" id="f-wallet">
             <label for="wallet">WALLET ADDRESS</label>
             <input id="wallet" type="text" placeholder="0x…" autocomplete="off" spellcheck="false">
-            <div class="hint">EVM address. this is where the free glyph goes.</div>
+            <div class="hint">EVM address. this is your mint wallet.</div>
             <div class="err">that's not a valid address.</div>
           </div>
 
@@ -648,7 +646,7 @@ document.getElementById("glyphs").innerHTML = GLYPHS.map(g => `
     ["PRICE",          MINT.price],
     ["SUPPLY",         MINT.supply],
     ["MAX PER WALLET", MINT.maxPer],
-    ["FREE SPOTS",     "500 · first come first served"],
+    ["GTD SPOTS",     "500 · based on application"],
     ["CHAIN",          MINT.chain],
     ["DATE",           MINT.date]
   ];
